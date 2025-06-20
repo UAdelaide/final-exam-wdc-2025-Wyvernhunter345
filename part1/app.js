@@ -25,7 +25,7 @@ let dbConnectionPool;
       password: ''
     });
 
-    await db.execute(`DROP TABLE IF EXISTS Users`);
+    await dbConnectionPool.execute(`DROP TABLE IF EXISTS Users`);
     await db.execute(`CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -82,6 +82,7 @@ let dbConnectionPool;
     FOREIGN KEY (owner_id) REFERENCES Users(user_id),
     CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
 );`);
+    await db.execute
 
   }
   catch (e)
