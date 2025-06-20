@@ -9,7 +9,7 @@ let dbConnectionPool;
 
 (async () => {
   try {
-    var connection = await mysql.createConnection({
+    var connection = await mysql.createPool({
       host: 'localhost',
       user: 'root',
       password: ''
