@@ -34,7 +34,7 @@ let dbConnectionPool;
     role ENUM('owner', 'walker') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )`);
-console.log("got here");
+  console.log("got here");
 
     await dbConnectionPool.execute(`DROP TABLE IF EXISTS Dogs`);
     await dbConnectionPool.execute(`CREATE TABLE Dogs (
