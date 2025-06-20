@@ -16,6 +16,9 @@ let dbConnectionPool;
 
 (async () => {
   try {
+    await connection.query('CREATE DATABASE IF NOT EXISTS testdb');
+    await connection.end();
+
     dbConnectionPool = mysql.createPool({
       host: 'localhost',
       database: 'DogWalkService',
