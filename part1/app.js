@@ -26,7 +26,7 @@ let dbConnectionPool;
     });
 
     await db.execute(`
-      DROP TABLE IF NOT EXISTS books`;
+      DROP TABLE IF EXISTS `);
 
 
   }
