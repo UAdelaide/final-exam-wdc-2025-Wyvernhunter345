@@ -56,12 +56,13 @@ let dbConnectionPool;
       FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
   );`);
 
-    await db.execute(`DROP TABLE IF EXISTS WalkRequests`);
+    await db.execute(`DROP TABLE IF EXISTS WalkApplications`);
+    await db.execute(``);
 
   }
   catch (e)
   {
-    console.error("Could not set up database!")
+    console.error("Could not set up database!");
   }
 })();
 
