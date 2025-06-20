@@ -16,7 +16,7 @@ let dbConnectionPool;
 
 (async () => {
   try {
-    bbConnectionPool = mysql.createPool({
+    dbConnectionPool = mysql.createPool({
       host: 'localhost',
       database: 'DogWalkService',
       user: 'root',
