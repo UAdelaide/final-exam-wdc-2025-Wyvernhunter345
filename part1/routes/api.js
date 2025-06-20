@@ -3,9 +3,9 @@ var router = express.Router();
 
 router.get('/dogs', async function (req,res,next) {
     try {
-        await dbConnectionPool.execute(`SELECT dog_name, size FROM Dogs`);
+        const await dbConnectionPool.execute(`SELECT dog_name, size FROM Dogs`);
     } catch (e) {
-
+        res.status(500).json({ error: 'Failed to fetch books' });
     }
 });
 
