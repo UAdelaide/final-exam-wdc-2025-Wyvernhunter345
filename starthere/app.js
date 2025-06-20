@@ -27,7 +27,7 @@ let db;
     await connection.end();
 
     // Now connect to the created database
-    db = await mysql.createConnection({
+    db = await mysql.createPool({
       host: 'localhost',
       user: 'root',
       password: '',
