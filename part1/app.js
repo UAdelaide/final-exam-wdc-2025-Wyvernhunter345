@@ -24,6 +24,8 @@ let dbConnectionPool;
       user: 'root',
       password: ''
     });
+
+    
   }
   catch (e)
   {
