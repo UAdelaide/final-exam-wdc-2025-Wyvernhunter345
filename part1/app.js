@@ -12,6 +12,8 @@ var dbConnectionPool = mysql.createPool({
   password: ''
 });
 
+(async () => )
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
