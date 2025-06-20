@@ -9,7 +9,7 @@ let dbConnectionPool;
 
 (async () => {
   try {
-    var connection = await mysql.createPool({
+    var connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: ''
@@ -18,7 +18,7 @@ let dbConnectionPool;
     await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
     await connection.end();
 
-    dbConnectionPool = mysql.createPool({
+    dbConnectionPool = await mysql.createConnection({
       host: 'localhost',
       database: 'DogWalkService',
       user: 'root',
