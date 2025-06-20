@@ -33,7 +33,7 @@ let dbConnectionPool;
     password_hash VARCHAR(255) NOT NULL,
     role ENUM('owner', 'walker') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);`);
+)`);
 console.log("got here");
 
     await dbConnectionPool.execute(`DROP TABLE IF EXISTS Dogs`);
@@ -43,7 +43,7 @@ console.log("got here");
     name VARCHAR(50) NOT NULL,
     size ENUM('small', 'medium', 'large') NOT NULL,
     FOREIGN KEY (owner_id) REFERENCES Users(user_id)
-);`);
+)`);
 
     await dbConnectionPool.execute(`DROP TABLE IF EXISTS WalkRequests`);
     await dbConnectionPool.execute(`CREATE TABLE WalkRequests (
@@ -55,7 +55,7 @@ console.log("got here");
       status ENUM('open', 'accepted', 'completed', 'cancelled') DEFAULT 'open',
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
-  );`);
+  )`);
 
     await dbConnectionPool.execute(`DROP TABLE IF EXISTS WalkApplications`);
     await dbConnectionPool.execute(`CREATE TABLE WalkApplications (
@@ -67,7 +67,7 @@ console.log("got here");
     FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id),
     FOREIGN KEY (walker_id) REFERENCES Users(user_id),
     CONSTRAINT unique_application UNIQUE (request_id, walker_id)
-);`);
+)`);
 
     await dbConnectionPool.execute(`DROP TABLE IF EXISTS WalkRatings`);
     await dbConnectionPool.execute(`CREATE TABLE WalkRatings (
