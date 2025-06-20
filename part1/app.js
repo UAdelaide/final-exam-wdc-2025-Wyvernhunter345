@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 
 app.use(function(req, res, next) {
   req.pool = dbConnectionPool;
-	next();
+  next();
 });
 
 app.use(logger('dev'));
