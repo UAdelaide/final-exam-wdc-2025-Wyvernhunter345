@@ -55,7 +55,8 @@ let dbConnectionPool;
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
   );`);
-  
+
+    await db.execute(`DROP TABLE IF EXISTS WalkRequests`);
 
   }
   catch (e)
