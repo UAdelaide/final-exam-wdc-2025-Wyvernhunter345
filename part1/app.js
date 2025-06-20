@@ -35,6 +35,7 @@ let dbConnectionPool;
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );`);
 
+    await db.execute(``)
 
 
   }
