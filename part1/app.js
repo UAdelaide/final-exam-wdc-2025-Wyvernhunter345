@@ -7,7 +7,6 @@ var mysql = require('mysql2/promise');
 
 var connection = mysql.createPool({
   host: 'localhost',
-  database: 'DogWalkService',
   user: 'root',
   password: ''
 });
@@ -16,7 +15,7 @@ let dbConnectionPool;
 
 (async () => {
   try {
-    await connection.query('CREATE DATABASE IF NOT EXISTS testdb');
+    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
     await connection.end();
 
     dbConnectionPool = mysql.createPool({
