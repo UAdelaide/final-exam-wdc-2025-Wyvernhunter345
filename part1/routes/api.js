@@ -6,7 +6,7 @@ router.get('/dogs', async function (req,res,next) {
         const [dogs] = await pool.query('SELECT dog_name, size FROM Dogs');
         return dogs;
     } catch (e) {
-        res.status(500).json({ error: 'Failed to fetch books' });
+        res.status(500).json({ error: 'Failed to fetch dogs' });
     }
 });
 
