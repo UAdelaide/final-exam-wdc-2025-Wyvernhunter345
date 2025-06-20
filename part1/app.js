@@ -13,7 +13,7 @@ var dbConnectionPool = mysql.createPool({
 });
 
 (async () => {
-  await conne
+  await dbConnectionPool.
 })
 
 var indexRouter = require('./routes/index');
