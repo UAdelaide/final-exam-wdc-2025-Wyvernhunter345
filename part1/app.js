@@ -25,7 +25,9 @@ let dbConnectionPool;
       password: ''
     });
 
-    
+    await db.execute(`
+      DROP TABLE IF NOT EXISTS books`;
+
 
   }
   catch (e)
