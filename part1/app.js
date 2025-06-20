@@ -7,7 +7,9 @@ var mysql = require('mysql2/promise');
 
 var dbConnectionPool = mysql.createPool({
   host: 'localhost',
-  database: 'DogWalkService'
+  database: 'DogWalkService',
+  user: 'root',
+  password: ''
 });
 
 var indexRouter = require('./routes/index');
