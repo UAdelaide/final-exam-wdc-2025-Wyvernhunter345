@@ -89,7 +89,19 @@ let dbConnectionPool;
     ("Syndix01", "syndix@example.com", "anotherhash", "owner"),
     ("Isaac2014", "isaac@example.com", "yetanotherhash", "walker");`);
 
-    await dbConnectionPool.execute(``)
+    await dbConnectionPool.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES
+    ((SELECT user_id FROM Users WHERE username = "alice123"), "Max", "medium"),
+    ((SELECT user_id FROM Users WHERE username = "carol123"), "Bella", "small"),
+    ((SELECT user_id FROM Users WHERE username = "Syndix01"), "Badga", "small"),
+    ((SELECT user_id FROM Users WHERE username = "Syndix01"), "Jits", "medium"),
+    ((SELECT user_id FROM Users WHERE username = "Isaac2014"), "Guppy", "large");`);
+
+    await dbConnectionPool.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+    ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", 30, "Parklands", "open"),
+    ((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", 45, "Beachside Ave", "accepted"),
+    ((SELECT dog_id FROM Dogs WHERE name = "Guppy"), "2025-06-28 13:30:00", 30, "Esplanade", "accepted"),
+    ((SELECT dog_id FROM Dogs WHERE name = "Jits"), "2025-07-10 17:45:00", 60, "Civic Park", "open"),
+    ((SELECT dog_id FROM Dogs WHERE name = "Badga"), "2025-07-08 12:00:00", 40, "Botanical Gardens", "accepted");`)
 
   }
   catch (e)
