@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mysql = require('mysql2/promise');
 
-var dbConnectionPool = mysql.createPool({
+var connection = mysql.createPool({
   host: 'localhost',
   database: 'DogWalkService',
   user: 'root',
@@ -13,7 +13,14 @@ var dbConnectionPool = mysql.createPool({
 });
 
 (async () => {
-  await dbConnectionPool.
+  try {
+    var dbConnectionPool = mysql.createPool({
+      host: 'localhost',
+      database: 'DogWalkService',
+      user: 'root',
+      password: ''
+    });
+  }
 })
 
 var indexRouter = require('./routes/index');
