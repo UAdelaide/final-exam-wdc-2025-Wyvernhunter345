@@ -3,8 +3,7 @@ var router = express.Router();
 
 router.get('/dogs', async function (req,res,next) {
     try {
-        console.log(pool);
-        const [dogs] = await pool.query('SELECT name, size FROM Dogs');
+        const [dogs] = await req.pool.query('SELECT name, size FROM Dogs');
         return dogs;
     } catch (e) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
