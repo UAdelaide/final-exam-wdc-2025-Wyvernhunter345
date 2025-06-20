@@ -14,6 +14,7 @@ let dbConnectionPool;
       user: 'root',
       password: ''
     });
+    console.log("got here");
 
     await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
     await connection.end();
