@@ -4,7 +4,7 @@ var router = express.Router();
 router.get('/dogs', async function (req,res,next) {
     try {
         const [dogs] = await req.pool.getConnection(function(err, connection) {
-            
+            connection.query("SELECT dog_name, size FROM Dogs", )
         });
         return dogs;
     } catch (e) {
