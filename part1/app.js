@@ -16,7 +16,7 @@ let dbConnectionPool;
 
 (async () => {
   try {
-    var dbConnectionPool = mysql.createPool({
+    bbConnectionPool = mysql.createPool({
       host: 'localhost',
       database: 'DogWalkService',
       user: 'root',
@@ -25,7 +25,7 @@ let dbConnectionPool;
   }
   catch (e)
   {
-
+    console.error("Could not set up database!")
   }
 })();
 
