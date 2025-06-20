@@ -25,8 +25,8 @@ let dbConnectionPool;
       password: ''
     });
 
-    await db.execute(`
-      DROP TABLE IF EXISTS `);
+    await db.execute(`DROP TABLE IF EXISTS Users`);
+    await db.execute
 
 
   }
