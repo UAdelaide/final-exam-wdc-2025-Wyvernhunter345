@@ -12,6 +12,8 @@ var connection = mysql.createPool({
   password: ''
 });
 
+let dbConnectionPool;
+
 (async () => {
   try {
     var dbConnectionPool = mysql.createPool({
@@ -20,6 +22,10 @@ var connection = mysql.createPool({
       user: 'root',
       password: ''
     });
+  }
+  catch (e)
+  {
+
   }
 })
 
