@@ -44,7 +44,8 @@ let dbConnectionPool;
     FOREIGN KEY (owner_id) REFERENCES Users(user_id)
 );`);
 
-await db.execute(`DROP TABLE IF EXISTS Dogs`);
+    await db.execute(`DROP TABLE IF EXISTS WalkRequests`);
+    await db.execute(`DROP TABLE IF EXISTS Dogs`);
 
   }
   catch (e)
