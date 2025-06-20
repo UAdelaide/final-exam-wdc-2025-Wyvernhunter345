@@ -15,7 +15,8 @@ let dbConnectionPool;
       password: ''
     });
 
-    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
+    await connection.query('DROP DATABASE IF EXISTS DogWalkService');
+    await connection.query('CREATE DATABASE DogWalkService');
     await connection.end();
 
     dbConnectionPool = await mysql.createConnection({
