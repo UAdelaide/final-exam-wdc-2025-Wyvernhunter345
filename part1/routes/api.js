@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/dogs', function (req,res,next) {
     try {
-        await db
+        await dbConnectionPool.execute(``)
     } catch (e) {
 
     }
