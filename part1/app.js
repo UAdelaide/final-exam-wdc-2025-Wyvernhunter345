@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mysql = require('mysql');
+var mysql = require('mysql/promise');
 
 let dbConnectionPool;
 
@@ -19,7 +19,7 @@ let dbConnectionPool;
     await connection.query('CREATE DATABASE DogWalkService');
     await connection.end();
 
-    dbConnectionPool = await mysql.createConnection({
+    dbConnectionPool = await mysql.createPool({
       host: 'localhost',
       database: 'DogWalkService',
       user: 'root',
