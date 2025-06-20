@@ -26,7 +26,7 @@ let dbConnectionPool;
     });
 
     await dbConnectionPool.execute(`DROP TABLE IF EXISTS Users`);
-    await db.execute(`CREATE TABLE Users (
+    await dbConnectionPool.execute(`CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -35,8 +35,8 @@ let dbConnectionPool;
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );`);
 
-    await db.execute(`DROP TABLE IF EXISTS Dogs`);
-    await db.execute(`CREATE TABLE Dogs (
+    await dbConnectionPool.execute(`DROP TABLE IF EXISTS Dogs`);
+    await dbConnectionPool.execute(`CREATE TABLE Dogs (
     dog_id INT AUTO_INCREMENT PRIMARY KEY,
     owner_id INT NOT NULL,
     name VARCHAR(50) NOT NULL,
@@ -44,8 +44,8 @@ let dbConnectionPool;
     FOREIGN KEY (owner_id) REFERENCES Users(user_id)
 );`);
 
-    await db.execute(`DROP TABLE IF EXISTS WalkRequests`);
-    await db.execute(`CREATE TABLE WalkRequests (
+    await dbConnectionPool.execute(`DROP TABLE IF EXISTS WalkRequests`);
+    await dbConnectionPool.execute(`CREATE TABLE WalkRequests (
       request_id INT AUTO_INCREMENT PRIMARY KEY,
       dog_id INT NOT NULL,
       requested_time DATETIME NOT NULL,
@@ -56,8 +56,8 @@ let dbConnectionPool;
       FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
   );`);
 
-    await db.execute(`DROP TABLE IF EXISTS WalkApplications`);
-    await db.execute(`CREATE TABLE WalkApplications (
+    await dbConnectionPool.execute(`DROP TABLE IF EXISTS WalkApplications`);
+    await dbConnectionPool.execute(`CREATE TABLE WalkApplications (
     application_id INT AUTO_INCREMENT PRIMARY KEY,
     request_id INT NOT NULL,
     walker_id INT NOT NULL,
@@ -68,8 +68,8 @@ let dbConnectionPool;
     CONSTRAINT unique_application UNIQUE (request_id, walker_id)
 );`);
 
-    await db.execute(`DROP TABLE IF EXISTS WalkRatings`);
-    await db.execute(`CREATE TABLE WalkRatings (
+    await dbConnectionPool.execute(`DROP TABLE IF EXISTS WalkRatings`);
+    await dbConnectionPool.execute(`CREATE TABLE WalkRatings (
     rating_id INT AUTO_INCREMENT PRIMARY KEY,
     request_id INT NOT NULL,
     walker_id INT NOT NULL,
@@ -82,7 +82,7 @@ let dbConnectionPool;
     FOREIGN KEY (owner_id) REFERENCES Users(user_id),
     CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
 );`);
-    await db.execute
+    await dbConnectionPool.execute
 
   }
   catch (e)
