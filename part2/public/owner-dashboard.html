@@ -130,18 +130,12 @@
                     async function getDogs() {
                         try {
                             const res = await fetch("/api/users/dogs");
-                            for (i = 0; i < res.length; i++)
-                            {
-                                if (res.body[i])
-                                {
-
+                            console.log(res.body);
+                            for (i = 0; i < res.length; i++) {
+                                if (res.body[i]) {
                                 }
                             }
-                        }
-                        catch (err)
-                        {
-
-                        }
+                        } catch (err) {}
                     }
 
                     async function loadWalks() {
@@ -185,6 +179,7 @@
 
                     onMounted(() => {
                         loadWalks();
+                        getDogs();
                     });
 
                     return {
