@@ -130,7 +130,7 @@
                         location: "",
                     };
 
-                    const dogArray = ref([""];
+                    const dogArray = ref([]);
 
                     const walks = ref([]);
                     const message = ref("");
@@ -145,7 +145,7 @@
                             console.log(userJson);
                             for (i = 0; i < dogsJson.length; i++) {
                                 if (dogsJson[i].owner_id === userJson) {
-                                    dogArray.push(dogsJson[i].name);
+                                    dogArray.value.push(dogsJson[i].name);
                                 }
                             }
                             console.log(form);
