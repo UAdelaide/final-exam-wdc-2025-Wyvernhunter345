@@ -11,7 +11,9 @@ router.get('/dogs', async function (req,res,next) {
 });
 
 router.get('/walkrequests/open', function (req,res,next) {
-    
+    try {
+        const [requests] = await 
+    }
 })
 
 module.exports = router;
