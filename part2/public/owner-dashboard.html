@@ -38,11 +38,15 @@
                                 class="form-control"
                                 required
                             >
-                                <option disabled value="-- Choose a dog --">
+                                <option
+                                    disabled
+                                    value="-- Choose a dog --"
+                                    selected
+                                >
                                     -- Choose a dog --
                                 </option>
                                 <option v-for="dog in dogArray">
-                                    {{ dog }}
+                                    {{ dog.name }}
                                 </option>
                             </select>
                         </div>
