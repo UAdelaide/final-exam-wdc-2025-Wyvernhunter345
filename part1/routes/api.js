@@ -27,4 +27,6 @@ router.get('/walkrequests/open', async function (req,res,next) {
     }
 });
 
+router.get('/walkers/summary', function)
+
 module.exports = router;
