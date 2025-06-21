@@ -116,11 +116,13 @@
             createApp({
                 setup() {
                     const form = {
-                        dog_id: [],
+                        dog_id: "",
                         requested_time: "",
                         duration_minutes: "",
                         location: "",
                     };
+
+                    const dogs = []
 
                     const walks = ref([]);
                     const message = ref("");
