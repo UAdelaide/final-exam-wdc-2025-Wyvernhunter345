@@ -57,7 +57,7 @@
                         const dogs = await axios.get("/api/dogs");
                         console.log(dogs);
                         this.registeredDogs = dogs.data;
-                        dogImages
+                        const dogImages = await axios.get(`https://dog.ceo/api/breeds/image/random/`)
                         for (i = 0; i < this.registeredDogs.length; i++) {
 
                         }
