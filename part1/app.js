@@ -114,7 +114,7 @@ let dbConnectionPool;
   }
   catch (e)
   {
-    console.error("Could not set up database!");
+    console.error("Could not set up database! " + e);
   }
 })();
 
