@@ -106,8 +106,8 @@ let dbConnectionPool;
     ((SELECT dog_id FROM Dogs WHERE name = "Badga"), "2025-07-08 12:00:00", 40, "Botanical Gardens", "completed")`);
 
     await dbConnectionPool.execute(`INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
-    (4, (SELECT user_id FROM Users WHERE username = "Isaac2014"), (SELECT user_id FROM Users WHERE username = "Syndix01"), 5, "Pretty good! Also Isaac is supposed to be a reference to The Binding Of Isaac, go play it"),
-    (5, (SELECT user_id FROM Users WHERE username = "bobwalker"), (SELECT user_id FROM Users WHERE username = "Syndix01"), 4, "accepted")`);
+    (4, (SELECT user_id FROM Users WHERE username = "Isaac2014"), (SELECT user_id FROM Users WHERE username = "Syndix01"), 5, "Pretty good! Also Isaac is supposed to be a reference to the game The Binding Of Isaac, go play it!!"),
+    (5, (SELECT user_id FROM Users WHERE username = "bobwalker"), (SELECT user_id FROM Users WHERE username = "Syndix01"), 4, "Also very good. ")`);
   }
   catch (e)
   {
