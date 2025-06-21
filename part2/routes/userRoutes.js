@@ -57,9 +57,7 @@ router.post("/login", async (req, res, next) => {
         );
 
         if (rows.length === 0) {
-            return res.status(401).json({
-                error: "Invalid credentials",
-            });
+            res.redirect('/');
         }
 
         // Regen session just in case
