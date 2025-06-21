@@ -82,8 +82,8 @@ let dbConnectionPool;
     FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id),
     FOREIGN KEY (walker_id) REFERENCES Users(user_id),
     FOREIGN KEY (owner_id) REFERENCES Users(user_id),
-    CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
-)`);
+    CONSTRAINT unique_rating_per_walk UNIQUE (request_id))`);
+
     await dbConnectionPool.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES
     ("alice123", "alice@example.com", "hashed123", "owner"),
     ("bobwalker", "bob@example.com", "hashed456", "walker"),
