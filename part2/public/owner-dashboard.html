@@ -198,10 +198,7 @@
                         }
                     }
 
-                    onMounted(() => {
-                        getDogs();
-                        loadWalks();
-                    });
+                    onMounted(() => {});
 
                     return {
                         form,
@@ -210,6 +207,11 @@
                         error,
                         submitWalkRequest,
                     };
+                },
+
+                mounted() {
+                    getDogs();
+                    loadWalks();
                 },
             }).mount("#app");
         </script>
