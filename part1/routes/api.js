@@ -12,7 +12,7 @@ router.get('/dogs', async function (req,res,next) {
 
 router.get('/walkrequests/open', function (req,res,next) {
     try {
-        const [requests] = await 
+        const [requests] = await req.pool.execute('SELECT ')
     }
 })
 
