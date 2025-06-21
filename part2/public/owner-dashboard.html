@@ -132,7 +132,7 @@
                             const res = await fetch("/api/dogs");
                             resJson = await res.json();
                             for (i = 0; i < res.length; i++) {
-                                if (resJson[i]) {
+                                if (resJson[i].owner_id === ) {
                                 }
                             }
                         } catch (err) {}
