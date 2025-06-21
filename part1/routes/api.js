@@ -33,8 +33,8 @@ router.get('/walkers/summary', async function (req,res,next) {
             FROM Users
             INNER JOIN WalkRatings
             ON Users.user_id = WalkRatings.walker_id
-            INNER JOIN WalkApplications
-            ON Users.user_id = WalkApplications.walker_id
+            INNER JOIN WalkRequests
+            ON Users.user_id = WalkRequests.walker_id
             GROUP BY Username`);
         req.json(walkers);
     } catch (e) {
