@@ -1,3 +1,6 @@
+const express = require('express');
+const router = express.Router();
+const db = require('../models/db');
 
 // GET list of all registered dogs
 router.get('/api/dogs', async (req, res) => {
@@ -8,3 +11,5 @@ router.get('/api/dogs', async (req, res) => {
       res.status(500).json({ error: 'Failed to fetch users' });
     }
   });
+
+  module.exports = router;
