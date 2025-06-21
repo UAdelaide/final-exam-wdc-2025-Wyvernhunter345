@@ -60,7 +60,9 @@
                         const dogImages = await axios.get(
                             `https://dog.ceo/api/breeds/image/random/${this.registeredDogs.length}`
                         );
-                        for (i = 0; i < this.registeredDogs.length; i++) {}
+                        for (i = 0; i < this.registeredDogs.length; i++) {
+                          dogImages.data.message[i]
+                        }
                     },
                 },
                 mounted() {
