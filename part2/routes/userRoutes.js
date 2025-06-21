@@ -62,6 +62,7 @@ router.post("/login", async (req, res, next) => {
             });
         }
 
+        // Regen session just in case
         req.session.regenerate(function (err) {
             if (err) next(err);
 
