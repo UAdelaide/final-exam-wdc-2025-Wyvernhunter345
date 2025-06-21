@@ -29,7 +29,7 @@ router.get('/walkrequests/open', async function (req,res,next) {
 
 router.get('/walkers/summary', async function (req,res,next) {
     try {
-        const [walkers] = await req.pool.execute(`SELECT `);
+        const [walkers] = await req.pool.execute(`SELECT username AS walker_username, `);
         req.json(walkers);
     } catch (e) {
         res.status(500).json({ error: 'Failed to fetch walkers: ' + e });
