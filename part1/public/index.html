@@ -14,7 +14,6 @@
 
     <script>
         const { createApp, ref } = Vue
-
         createApp({
             data() {
                 return {
@@ -25,8 +24,7 @@
                 async getDog()
                 {
                     const img = await axios.get('https://dog.ceo/api/breeds/image/random')
-                    this.imgSrc = img.message;
-                    console.log(img);
+                    this.imgSrc = img.data.message;
                 }
 
             },
