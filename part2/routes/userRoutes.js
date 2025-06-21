@@ -53,7 +53,7 @@ router.post("/login", async (req, res) => {
       SELECT user_id, username, role FROM Users
       WHERE username = ? AND password_hash = ?
     `,
-            [req.body.username, req.body.password]
+            [username, password]
         );
 
         if (rows.length === 0) {
