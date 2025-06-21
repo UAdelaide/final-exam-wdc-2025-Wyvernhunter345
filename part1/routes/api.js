@@ -10,4 +10,6 @@ router.get('/dogs', async function (req,res,next) {
     }
 });
 
+router.get('')
+
 module.exports = router;
