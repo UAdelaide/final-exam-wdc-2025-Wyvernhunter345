@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET list of all registered dogs
 router.get('/api/dogs', async (req, res) => {
   try {
     const [dogs] = await db.execute("SELECT * FROM Dogs");
@@ -19,8 +20,7 @@ router.get('/api/dogs', async (req, res) => {
   } catch (e) {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
-
-})
+});
 
 // POST a new user (simple signup)
 router.post('/register', async (req, res) => {
