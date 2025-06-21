@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(
     session({
-        secret: "",
+        secret: "Ideally this would be a cryptographically generated ",
         resave: false,
         saveUninitialized: true,
         cookie: { secure: false }, // should be true when dealing with HTTPS
