@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/dogs', async function (req,res,next) {
     try {
-        const [dogs] = await req.pool.execute('SELECT DISTINCT name, size, owner_username AS  FROM Dogs');
+        const [dogs] = await req.pool.execute('SELECT DISTINCT name, size, owner_username AS (SELECT ) FROM Dogs');
         res.json(dogs);
     } catch (e) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
