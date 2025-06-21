@@ -76,6 +76,8 @@ router.post("/login", async (req, res, next) => {
                     res.redirect("/owner-dashboard.html");
                 } else if (rows.role === "walker") {
                     res.redirect("/walker-dashboard.html");
+                } else {
+                    res.json(rows);
                 }
             });
         });
