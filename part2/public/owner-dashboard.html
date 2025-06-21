@@ -133,7 +133,7 @@
                         } catch (err) {
                             error.value = "Failed to load walk requests";
                         }
-                    }
+                    },
 
                     async function submitWalkRequest() {
                         try {
@@ -185,12 +185,12 @@
                                 console.log(err);
                             }
                         }
-                    }
+                    };
 
-                    mounted() => {
+                    mounted() {
                         loadWalks();
                         getDogs();
-                    });
+                    };
 
                     return {
                         form,
