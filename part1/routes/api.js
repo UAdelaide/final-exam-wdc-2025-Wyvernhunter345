@@ -35,6 +35,7 @@ router.get('/walkers/summary', async function (req,res,next) {
             ON Users.user_id = WalkRatings.walker_id
             INNER JOIN WalkRequests
             ON Users.user_id = WalkRequests.walker_id
+            WHERE 
             GROUP BY Username`);
         req.json(walkers);
     } catch (e) {
