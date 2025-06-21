@@ -35,7 +35,7 @@ router.get('/walkers/summary', async function (req,res,next) {
             ON Users.user_id = WalkRatings.walker_id
             INNER JOIN WalkApplications
             ON Users.user_id = WalkApplcations.walker_id
-            WHERE `);
+            WHERE role = "walker" AND `);
         req.json(walkers);
     } catch (e) {
         res.status(500).json({ error: 'Failed to fetch walkers: ' + e });
