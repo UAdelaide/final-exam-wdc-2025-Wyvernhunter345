@@ -67,7 +67,6 @@
                 methods: {
                     async getRegisteredDogs() {
                         const dogs = await axios.get("/api/dogs");
-                        console.log(dogs);
                         this.registeredDogs = dogs.data;
                         const dogImages = await axios.get(
                             `https://dog.ceo/api/breeds/image/random/${this.registeredDogs.length}`
@@ -76,7 +75,6 @@
                             this.registeredDogs[i].img =
                                 dogImages.data.message[i];
                         }
-                        console.log(this.registeredDogs);
                     },
                 },
                 mounted() {
