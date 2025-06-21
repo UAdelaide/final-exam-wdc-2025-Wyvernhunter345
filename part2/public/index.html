@@ -55,7 +55,7 @@
       methods: {
         async getRegisteredDogs()
         {
-          const [dogs] = await pool.
+          const [dogs] = await pool.execute("SELECT * FROM Dogs");
         }
       }
     }).mount('#app');
