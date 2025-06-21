@@ -19,7 +19,7 @@
             setup() {
             },
             async mounted() {
-                const imgSrc = axios.get('https://dog.ceo/api/breeds/image/random')
+                const imgSrc = await axios.get('https://dog.ceo/api/breeds/image/random')
                 return imgSrc.message;
             }
         }).mount('#app')
