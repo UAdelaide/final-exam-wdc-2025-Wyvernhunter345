@@ -57,7 +57,7 @@
         {
           const dogs = await axios.get('/api/dogs');
           console.log(dogs);
-          this.registeredDogs = 
+          this.registeredDogs = dogs.data;
         }
       },
       mounted()
