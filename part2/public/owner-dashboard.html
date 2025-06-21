@@ -130,6 +130,7 @@
                     async function getDogs() {
                         try {
                             const res = await fetch("/api/dogs");
+                            const user = await fetch("/api/users/me");
                             resJson = await res.json();
                             for (i = 0; i < res.length; i++) {
                                 if (resJson[i].owner_id === ) {
