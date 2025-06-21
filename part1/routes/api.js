@@ -18,12 +18,13 @@ router.get('/walkrequests/open', async function (req,res,next) {
             ON WalkRequests.dog_id = Dogs.dog_id
             INNER JOIN Users
             ON Dogs.owner_id = Users.user_id
-            WHERE status = "open"`)
+            WHERE status = "open"`);
+        res.json(requests);
     }
     catch (e)
     {
         res.status(500).json({ error: 'Failed to fetch dogs: ' + e });
     }
-})
+});
 
 module.exports = router;
