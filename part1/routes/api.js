@@ -12,7 +12,7 @@ router.get('/dogs', async function (req,res,next) {
 
 router.get('/walkrequests/open', async function (req,res,next) {
     try {
-        const [requests] = await req.pool.execute(`SELECT request_id, Dogs.name, requested_time, duration_minutes, location, Users.username
+        const [requests] = await req.pool.execute(`SELECT request_id, Dogs.name AS dog_name, requested_time, duration_minutes, location, Users.username AS owner_username
             FROM WalkRequests
             INNER JOIN Dogs
             ON WalkRequests.dog_id = Dogs.dog_id
