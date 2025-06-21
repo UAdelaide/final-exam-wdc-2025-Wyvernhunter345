@@ -23,7 +23,7 @@ router.get('/walkrequests/open', async function (req,res,next) {
     }
     catch (e)
     {
-        res.status(500).json({ error: 'Failed to fetch dogs: ' + e });
+        res.status(500).json({ error: 'Failed to fetch walk requests: ' + e });
     }
 });
 
@@ -32,7 +32,7 @@ router.get('/walkers/summary', async function (req,res,next) {
         const [walkers] = await req.pool.execute(``);
         req.json(walkers);
     } catch (e) {
-
+        res.status(500).json({ error: 'Failed to fetch walkers: ' + e });
     }
 })
 
