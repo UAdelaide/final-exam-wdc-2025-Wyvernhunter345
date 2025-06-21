@@ -66,6 +66,7 @@
                 },
                 methods: {
                     async getRegisteredDogs() {
+                        // Get a 
                         const dogs = await axios.get("/api/dogs");
                         this.registeredDogs = dogs.data;
                         const dogImages = await axios.get(
