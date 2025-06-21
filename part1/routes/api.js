@@ -18,7 +18,7 @@ router.get('/walkrequests/open', function (req,res,next) {
             ON WalkRequests.dog_id = Dogs.dog_id
             INNER JOIN Users
             ON Dogs.owner_id = Users.user_id
-            WHERE `)
+            WHERE status = "open"`)
     }
 })
 
