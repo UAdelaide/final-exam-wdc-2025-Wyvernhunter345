@@ -27,6 +27,12 @@ router.get('/walkrequests/open', async function (req,res,next) {
     }
 });
 
-router.get('/walkers/summary', function)
+router.get('/walkers/summary', async function (req,res,next) {
+    try {
+        const [walkers]
+    } catch (e) {
+
+    }
+})
 
 module.exports = router;
