@@ -133,7 +133,7 @@
                             dogsJson = await dogs.json();
                             userJson = await user.json();
                             console.log(userJson);
-                            for (i = 0; i < dogs.length; i++) {
+                            for (i = 0; i < dogsJson.length; i++) {
                                 if (dogsJson[i].owner_id === userJson) {
                                     this.form.dog_id.append(dogsJson[i].name);
                                 }
