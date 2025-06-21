@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(
     session({
-        // This should go in the .env file
+        // This should go in the .env file but is literally just a random SHA-512 string
         secret: "e49650aedb782dc8b735bbc59ad23c49ebd80afff53e6a8db2d7c7eece1568390075a4cc0d83a32f3dc656d1ebf246a7f8a619d119a0bc6ee0c9ed7fae1cc12e",
         resave: false,
         saveUninitialized: true,
