@@ -130,9 +130,9 @@
                     async function getDogs() {
                         try {
                             const res = await fetch("/api/dogs");
-                            console.log(await res.json());
+                            resJson = await res.json();
                             for (i = 0; i < res.length; i++) {
-                                if (res.body[i]) {
+                                if (resJson[i]) {
                                 }
                             }
                         } catch (err) {}
