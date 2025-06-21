@@ -125,22 +125,7 @@
             const { createApp, ref, onMounted } = Vue;
 
             createApp({
-                
-
-                setup() {
-                    const form = {
-                        dog_id: "",
-                        requested_time: "",
-                        duration_minutes: "",
-                        location: "",
-                    };
-
-                    const dogArray = ref([]);
-
-                    const walks = ref([]);
-                    const message = ref("");
-                    const error = ref("");
-
+                methods: {
                     async function getDogs() {
                         try {
                             const dogs = await fetch("/api/dogs");
@@ -158,6 +143,23 @@
                             console.log(err);
                         }
                     }
+                },
+
+                setup() {
+                    const form = {
+                        dog_id: "",
+                        requested_time: "",
+                        duration_minutes: "",
+                        location: "",
+                    };
+
+                    const dogArray = ref([]);
+
+                    const walks = ref([]);
+                    const message = ref("");
+                    const error = ref("");
+
+
 
                     async function loadWalks() {
                         try {
