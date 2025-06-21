@@ -22,8 +22,9 @@
                 return {
                     imgSrc: ""
                 }
-            }
-            async mounted() {
+            },
+            methods: {
+                getDog(){}
                 const imgSrc = await axios.get('https://dog.ceo/api/breeds/image/random')
                 return imgSrc.message;
             }
