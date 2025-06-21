@@ -44,7 +44,6 @@
   </div>
 
   <script>
-    const db = require('../models/db');
     const { createApp } = Vue;
     createApp({
       data() {
@@ -56,7 +55,7 @@
       methods: {
         async getRegisteredDogs()
         {
-          const [dogs] = await db.execute("SELECT * FROM Dogs");
+          const dogs] = await db.execute("SELECT * FROM Dogs");
           console.log(dogs);
         }
       },
