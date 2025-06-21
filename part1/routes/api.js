@@ -37,7 +37,7 @@ router.get('/walkers/summary', async function (req,res,next) {
             ON Users.user_id = WalkApplications.walker_id
             WHERE role = "walker"
             GROUP BY Username`);
-        req.json(walkers);
+        res.json(walkers);
     } catch (e) {
         res.status(500).json({ error: 'Failed to fetch walkers: ' + e });
     }
