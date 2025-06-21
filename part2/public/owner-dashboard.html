@@ -167,22 +167,24 @@
 
                     methods: {
                         async function getDogs() {
-                        try {
-                            const dogs = await fetch("/api/dogs");
-                            const user = await fetch("/api/users/me");
-                            dogsJson = await dogs.json();
-                            userJson = await user.json();
-                            console.log(userJson);
-                            for (i = 0; i < dogsJson.length; i++) {
-                                if (dogsJson[i].owner_id === userJson) {
-                                    this.form.dog_id.append(dogsJson[i].name);
+                            try {
+                                const dogs = await fetch("/api/dogs");
+                                const user = await fetch("/api/users/me");
+                                dogsJson = await dogs.json();
+                                userJson = await user.json();
+                                console.log(userJson);
+                                for (i = 0; i < dogsJson.length; i++) {
+                                    if (dogsJson[i].owner_id === userJson) {
+                                        this.form.dog_id.append(
+                                            dogsJson[i].name
+                                        );
+                                    }
                                 }
+                                console.log(this.form);
+                            } catch (err) {
+                                console.log(err);
                             }
-                            console.log(this.form);
-                        } catch (err) {
-                            console.log(err);
                         }
-                    }
                     }
 
                     onMounted(() => {
