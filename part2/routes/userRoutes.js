@@ -74,13 +74,10 @@ router.post("/login", async (req, res, next) => {
                 if (e) return next(e);
 
                 // Redirect based on their role
-                if (rows.role === "owner")
-                {
+                if (rows.role === "owner") {
                     res.redirect("/owner-dashboard.html");
-                }
-                else if (rows.role === "walker")
-                {
-                    res.redirect("")
+                } else if (rows.role === "walker") {
+                    res.redirect("/walker-dashboard.html");
                 }
             });
         });
