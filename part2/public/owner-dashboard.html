@@ -135,7 +135,7 @@
                             console.log(userJson);
                             for (i = 0; i < dogs.length; i++) {
                                 if (dogsJson[i].owner_id === userJson) {
-                                    dog_id.append(dogsJson[i].name);
+                                    this.dog_id.append(dogsJson[i].name);
                                 }
                             }
                         } catch (err) {}
