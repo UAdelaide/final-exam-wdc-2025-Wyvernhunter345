@@ -56,8 +56,12 @@
         async getRegisteredDogs()
         {
           const [dogs] = await pool.execute("SELECT * FROM Dogs");
-          console.log
+          console.log(dogs);
         }
+      },
+      mounted()
+      {
+        get
       }
     }).mount('#app');
   </script>
