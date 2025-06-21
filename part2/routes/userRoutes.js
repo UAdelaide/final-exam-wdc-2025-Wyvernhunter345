@@ -62,6 +62,18 @@ router.post("/login", async (req, res) => {
             });
         }
 
+        req.session.regenerate(function (err) {
+            if (err) next(err);
+
+            // Store user information in session
+            req.session.user = req.body.user;
+
+            // Save the session before redirection to ensure page load does not happen before session is saved
+            req.session.save(function (err) {
+                if (err) return next(err);
+                res.redirect("/");
+            });
+        });
         res.json({ message: "Login successful", user: rows[0] });
     } catch (error) {
         res.status(500).json({ error: "Login failed " + error });
