@@ -7,7 +7,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public")));
-// Okay who forgot to put the body parser middleware here.
+// Okay who forgot to put the body parser middleware here. I genuinely spent like 30 mins trying to debug login
 // I'm gonna crash out I swear
 app.use(express.urlencoded({ extended: false }));
 
