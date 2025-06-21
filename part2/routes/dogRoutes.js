@@ -10,6 +10,6 @@ router.get('/api/dogs', async (req, res) => {
     } catch (e) {
       res.status(500).json({ error: 'Failed to fetch users' });
     }
-  });
+});
 
-  module.exports = router;
+module.exports = router;
