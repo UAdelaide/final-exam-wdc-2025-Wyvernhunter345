@@ -65,7 +65,7 @@ router.post("/login", async (req, res, next) => {
             if (err) next(err);
 
             // Store user information in session
-            req.session.username = req.body.username;
+            req.session.id = rows[0];
 
             // Save the session before redirection to ensure page load does not happen before session is saved
             req.session.save(function (e) {
