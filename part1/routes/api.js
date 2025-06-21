@@ -31,7 +31,8 @@ router.get('/walkers/summary', async function (req,res,next) {
     try {
         const [walkers] = await req.pool.execute(`SELECT username AS walker_username, COUNT(WalkRatings.rating) AS total_ratings, AVG(WalkRatings.rating) AS average_rating, COUNT(WalkApplications.walker_id) AS completed_walks
             FROM Users
-            INNER JOIN `);
+            INNER JOIN WalkRatings
+            ON Users.user_id = `);
         req.json(walkers);
     } catch (e) {
         res.status(500).json({ error: 'Failed to fetch walkers: ' + e });
