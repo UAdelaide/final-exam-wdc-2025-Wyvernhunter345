@@ -17,6 +17,8 @@
 
         createApp({
             setup() {
+            },
+            async mounted() {
                 const imgSrc = axios.get('https://dog.ceo/api/breeds/image/random')
                 return imgSrc.message;
             }
