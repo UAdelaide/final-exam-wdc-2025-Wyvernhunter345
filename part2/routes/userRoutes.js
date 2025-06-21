@@ -88,7 +88,7 @@ router.post("/login", async (req, res, next) => {
 
 router.get("/logout", async (req, res, next) => {
     // Remove the user's session and sign them out
-    req.session.user = null;
+    req.session.id = null;
     res.redirect("/");
 });
 
