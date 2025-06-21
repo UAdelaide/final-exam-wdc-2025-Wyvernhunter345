@@ -44,7 +44,7 @@ router.get("/me", (req, res) => {
 });
 
 // POST login (dummy version)
-router.post("/login", async (req, res) => {
+router.post("/login", async (req, res, next) => {
     const { username, password } = req.body;
 
     try {
@@ -69,8 +69,8 @@ router.post("/login", async (req, res) => {
             req.session.user = req.body.user;
 
             // Save the session before redirection to ensure page load does not happen before session is saved
-            req.session.save(function (err) {
-                if (err) return next(err);
+            req.session.save(function (e) {
+                if (e) return next(e);
                 res.redirect("/");
             });
         });
