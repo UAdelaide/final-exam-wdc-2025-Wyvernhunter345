@@ -70,10 +70,12 @@
                         const dogs = await axios.get("/api/dogs");
                         this.registeredDogs = dogs.data;
 
-                        // Get random images of dogs, 
+                        // Get random images of dogs with only the number of dogs we need images for
                         const dogImages = await axios.get(
                             `https://dog.ceo/api/breeds/image/random/${this.registeredDogs.length}`
                         );
+
+                        // Add an i
                         for (i = 0; i < this.registeredDogs.length; i++) {
                             this.registeredDogs[i].img =
                                 dogImages.data.message[i];
