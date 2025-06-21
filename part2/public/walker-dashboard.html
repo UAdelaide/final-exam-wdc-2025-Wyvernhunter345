@@ -94,7 +94,7 @@
                     async function applyToWalk(requestId) {
                         try {
                             const q = await getCurrentUser();
-                            walkerID = await 
+                            walkerID = await q.json();
                             const res = await fetch(
                                 `/api/walks/${requestId}/apply`,
                                 {
@@ -103,7 +103,7 @@
                                         "Content-Type": "application/json",
                                     },
                                     body: JSON.stringify({
-                                        walker_id: walkerID.,
+                                        walker_id: walkerID,
                                     }),
                                 }
                             );
