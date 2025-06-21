@@ -24,9 +24,12 @@
                 }
             },
             methods: {
-                getDog(){}
+                async getDog()
+                {
                 const imgSrc = await axios.get('https://dog.ceo/api/breeds/image/random')
                 return imgSrc.message;
+                }
+
             }
         }).mount('#app')
     </script>
