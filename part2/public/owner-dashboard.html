@@ -122,7 +122,7 @@
                         location: "",
                     };
 
-                    const dogs = []
+                    const dogs = [];
 
                     const walks = ref([]);
                     const message = ref("");
@@ -134,11 +134,10 @@
                             const user = await fetch("/api/users/me");
                             dogsJson = await dogs.json();
                             userJson = await user.json();
-                            console.log(form);
                             console.log(userJson);
                             for (i = 0; i < dogsJson.length; i++) {
                                 if (dogsJson[i].owner_id === userJson) {
-                                    form.dog_id.push(dogsJson[i].name);
+                                    dogs.push(dogsJson[i].name);
                                 }
                             }
                             console.log(form);
