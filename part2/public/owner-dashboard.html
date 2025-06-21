@@ -132,9 +132,9 @@
                             const dogs = await fetch("/api/dogs");
                             const user = await fetch("/api/users/me");
                             dogsJson = await dogs.json();
-                            userJson =
+                            userJson = await user.json();
                             for (i = 0; i < dogs.length; i++) {
-                                if (resJson[i].owner_id === ) {
+                                if (dogsJson[i].owner_id === userJson) {
                                 }
                             }
                         } catch (err) {}
