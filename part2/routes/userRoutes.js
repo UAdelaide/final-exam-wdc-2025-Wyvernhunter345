@@ -72,6 +72,9 @@ router.post("/login", async (req, res, next) => {
             // Save the session before redirection to ensure page load does not happen before session is saved
             req.session.save(function (e) {
                 if (e) return next(e);
+
+                // Redirect based on their role
+                if (role)
                 res.redirect("/");
             });
         });
