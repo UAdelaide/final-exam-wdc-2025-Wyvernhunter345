@@ -35,7 +35,6 @@ router.get('/walkers/summary', async function (req,res,next) {
             ON Users.user_id = WalkRatings.walker_id
             INNER JOIN WalkApplications
             ON Users.user_id = WalkApplications.walker_id
-            WHERE role = "walker"
             GROUP BY Username`);
         req.json(walkers);
     } catch (e) {
