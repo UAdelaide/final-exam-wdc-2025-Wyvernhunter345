@@ -7,7 +7,9 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public")));
-// I
+// Okay who forgot to put the body parser middleware here.
+// I'm gonna crash out I swear
+app.use(express.urlencoded({ extended: false }));
 
 // Routes
 const walkRoutes = require("./routes/walkRoutes");
