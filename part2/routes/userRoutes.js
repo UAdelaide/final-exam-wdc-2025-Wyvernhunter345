@@ -59,7 +59,7 @@ router.post("/login", async (req, res) => {
         if (rows.length === 0) {
             return res.status(401).json({
                 error: "Invalid credentials ",
-                body: JSON.
+                body: JSON.parse(req.body),
             });
         }
 
