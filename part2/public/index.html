@@ -75,7 +75,8 @@
                             `https://dog.ceo/api/breeds/image/random/${this.registeredDogs.length}`
                         );
 
-                        // Add an i
+                        // Add an img value for each dog in the array with its random photo
+                        // 
                         for (i = 0; i < this.registeredDogs.length; i++) {
                             this.registeredDogs[i].img =
                                 dogImages.data.message[i];
