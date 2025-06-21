@@ -109,7 +109,7 @@ let dbConnectionPool;
     (5, (SELECT user_id FROM Users WHERE username = "bobwalker"), (SELECT user_id FROM Users WHERE username = "Syndix01"), 4, "Also very good. Badga and Jits are my real life dogs too! I have another one called Lily too but I didn't have enough space to include her sadly.")`);
 
     await dbConnectionPool.execute(`INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
-      (4, (SELECT user_id FROM Users WHERE username = "Isaac2014"), "accepted")
+      (4, (SELECT user_id FROM Users WHERE username = "Isaac2014"), "accepted"),
       (5, (SELECT user_id FROM Users WHERE username = "bobwalker"), "accepted")`);
   }
   catch (e)
