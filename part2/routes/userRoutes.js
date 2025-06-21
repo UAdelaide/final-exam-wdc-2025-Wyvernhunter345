@@ -57,7 +57,7 @@ router.post("/login", async (req, res, next) => {
         );
 
         if (rows.length === 0) {
-            res.redirect('/');
+            res.redirect("/");
         }
 
         // Regen session just in case
@@ -65,7 +65,7 @@ router.post("/login", async (req, res, next) => {
             if (err) next(err);
 
             // Store user information in session
-            req.session.user = req.body.user;
+            req.session.username = req.body.username;
 
             // Save the session before redirection to ensure page load does not happen before session is saved
             req.session.save(function (e) {
