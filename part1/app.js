@@ -102,8 +102,8 @@ let dbConnectionPool;
     ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", 30, "Parklands", "open"),
     ((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", 45, "Beachside Ave", "accepted"),
     ((SELECT dog_id FROM Dogs WHERE name = "Guppy"), "2025-06-28 13:30:00", 30, "Esplanade", "accepted"),
-    ((SELECT dog_id FROM Dogs WHERE name = "Jits"), "2025-07-10 17:45:00", 60, "Civic Park", "open"),
-    ((SELECT dog_id FROM Dogs WHERE name = "Badga"), "2025-07-08 12:00:00", 40, "Botanical Gardens", "accepted")`);
+    ((SELECT dog_id FROM Dogs WHERE name = "Jits"), "2025-07-10 17:45:00", 60, "Civic Park", "completed"),
+    ((SELECT dog_id FROM Dogs WHERE name = "Badga"), "2025-07-08 12:00:00", 40, "Botanical Gardens", "completed")`);
 
   }
   catch (e)
