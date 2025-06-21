@@ -57,10 +57,10 @@
                         const dogs = await axios.get("/api/dogs");
                         console.log(dogs);
                         this.registeredDogs = dogs.data;
-                        const dogImages = await axios.get(`https://dog.ceo/api/breeds/image/random/`)
-                        for (i = 0; i < this.registeredDogs.length; i++) {
-
-                        }
+                        const dogImages = await axios.get(
+                            `https://dog.ceo/api/breeds/image/random/${this.registeredDogs.length}`
+                        );
+                        for (i = 0; i < this.registeredDogs.length; i++) {}
                     },
                 },
                 mounted() {
