@@ -29,7 +29,7 @@ router.get('/walkrequests/open', async function (req,res,next) {
 
 router.get('/walkers/summary', async function (req,res,next) {
     try {
-        const [walkers] = await req.pool.execute(`SELECT username AS walker_username, COUNT(WalkRatings.rating) AS total_ratings, AVG(WalkRatings.rating) AS average_rating, COUNT(WalkRequests.walker_id) AS completed_walks
+        const [walkers] = await req.pool.execute(`SELECT username AS walker_username, COUNT(WalkRatings.rating) AS total_ratings, AVG(WalkRatings.rating) AS average_rating, COUNT(WalkRequests.request_id) AS completed_walks
             FROM Users
             INNER JOIN WalkRatings
             ON Users.user_id = WalkRatings.walker_id
