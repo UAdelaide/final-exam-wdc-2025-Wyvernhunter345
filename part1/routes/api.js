@@ -40,6 +40,6 @@ router.get('/walkers/summary', async function (req,res,next) {
     } catch (e) {
         res.status(500).json({ error: 'Failed to fetch walkers: ' + e });
     }
-})
+});
 
 module.exports = router;
