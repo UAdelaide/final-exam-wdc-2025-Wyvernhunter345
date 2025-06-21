@@ -29,7 +29,8 @@ router.get('/walkrequests/open', async function (req,res,next) {
 
 router.get('/walkers/summary', async function (req,res,next) {
     try {
-        const [walkers]
+        const [walkers] = await req.pool.execute(``);
+        req.json(walkers);
     } catch (e) {
 
     }
