@@ -126,23 +126,7 @@
 
             createApp({
                 methods: {
-                    async function getDogs() {
-                        try {
-                            const dogs = await fetch("/api/dogs");
-                            const user = await fetch("/api/users/me");
-                            dogsJson = await dogs.json();
-                            userJson = await user.json();
-                            console.log(userJson);
-                            for (i = 0; i < dogsJson.length; i++) {
-                                if (dogsJson[i].owner_id === userJson) {
-                                    dogArray.value.push(dogsJson[i]);
-                                }
-                            }
-                            console.log(dogArray.value);
-                        } catch (err) {
-                            console.log(err);
-                        }
-                    }
+                    
                 },
 
                 setup() {
