@@ -111,7 +111,7 @@ let dbConnectionPool;
     await dbConnectionPool.execute(`INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
       (4, (SELECT user_id FROM Users WHERE username = "Isaac2014"), "accepted"),
       (5, (SELECT user_id FROM Users WHERE username = "bobwalker"), "accepted"),
-      (3, (SELECT user_id FROM Users WHERE username = "bobwalker"), "pending")`);
+      (3, (SELECT user_id FROM Users WHERE username = "bobwalker"), "accepted")`);
   }
   catch (e)
   {
